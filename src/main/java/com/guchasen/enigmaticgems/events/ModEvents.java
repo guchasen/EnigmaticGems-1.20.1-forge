@@ -50,20 +50,14 @@ public class ModEvents {
             }
         }
     }
-
-    /**
-     * 当玩家拥有任何宝石在快捷栏时，给予相应效果
-     */
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-        // 只在服务器端执行，避免客户端和服务端不同步
         if (event.phase == TickEvent.Phase.END && !event.player.level().isClientSide()) {
             Player player = event.player;
 
             for (int i = 0; i < 9; i++) {
                 ItemStack stack = player.getInventory().getItem(i);
                 if (stack.getItem() == ModItems.STALWART_GEM.get()) {
-                    // 只在玩家没有抗性效果或者效果剩余时间较短时才添加新效果
                     if (!player.hasEffect(MobEffects.DAMAGE_RESISTANCE) || player.getEffect(MobEffects.DAMAGE_RESISTANCE).getDuration() <= 10) {
                         player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 0, false, false, true));
                     }
@@ -80,7 +74,6 @@ public class ModEvents {
                     }
                 }
                 else if(stack.getItem() == ModItems.ANTI_POISON_GEM.get()){
-                    // 如果玩家已经有中毒效果，则移除它
                     if (player.hasEffect(MobEffects.POISON)) {
                         player.removeEffect(MobEffects.POISON);
                     }
