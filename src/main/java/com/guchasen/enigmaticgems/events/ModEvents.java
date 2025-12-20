@@ -24,7 +24,6 @@ public class ModEvents {
     @SubscribeEvent
     public static void onEntityDeath(LivingDeathEvent event) {
         if (event.getEntity().getType() == EntityType.IRON_GOLEM) {
-            // 10%概率掉落
             if (random.nextInt(100) < 10) {
                 // 在铁傀儡位置生成坚守宝石
                 event.getEntity().spawnAtLocation(ModItems.STALWART_GEM.get());
