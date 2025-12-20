@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "minecraft:echo_shard"
+    },
+    "Y": {
+      "item": "enigmatic_gems:stalwart_gem"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "XYX",
+    "XXX"
+  ],
+  "result": {
+    "count": 1,
+    "item": "enigmatic_gems:echo_gem"
+  },
+  "show_notification": true
+}

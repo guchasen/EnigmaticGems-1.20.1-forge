@@ -1,0 +1,18 @@
+{
+  "item.enigmatic_gems.stalwart_gem": "坚守宝石",
+  "item.enigmatic_gems.red_gem": "奇异红宝石",
+  "item.enigmatic_gems.fire_gem": "抗火奇石",
+  "item.enigmatic_gems.anti_poison_gem": "抗毒奇石",
+  "item.enigmatic_gems.echo_gem": "回响宝石",
+  "itemGroup.enigmatic_gems": "神秘宝石",
+  "item.enigmatic_gems.stalwart_gem.desc1": "击杀铁傀儡10%概率掉落",
+  "item.enigmatic_gems.stalwart_gem.desc2": "当坚守宝石在快捷栏时为玩家提供1级抗性提升效果",
+  "item.enigmatic_gems.red_gem.desc1": "女巫死亡时概率掉落(5%)",
+  "item.enigmatic_gems.red_gem.desc2": "在快捷栏是提供生命回复2效果",
+  "item.enigmatic_gems.fire_gem.desc1": "烈焰人死亡时概率掉落(8%)",
+  "item.enigmatic_gems.fire_gem.desc2": "在快捷栏提供抗火效果",
+  "item.enigmatic_gems.anti_poison_gem.desc1": "洞穴蜘蛛死亡时10%概率掉落",
+  "item.enigmatic_gems.anti_poison_gem.desc2": "在快捷栏时为玩家提供中毒免疫效果",
+  "item.enigmatic_gems.echo_gem.desc1": "8个回响碎片合成 加上一个坚守宝石合成",
+  "item.enigmatic_gems.echo_gem.desc2": "在快捷栏时玩家免疫黑暗效果，并且为玩家提供抗性提升2"
+}
