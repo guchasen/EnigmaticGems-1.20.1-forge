@@ -21,12 +21,8 @@ public class ModEvents {
 
     private static final Random random = new Random();
 
-    /**
-     * 当特定实体死亡时，有概率掉落宝石
-     */
     @SubscribeEvent
     public static void onEntityDeath(LivingDeathEvent event) {
-        // 检查死亡的实体是否是铁傀儡
         if (event.getEntity().getType() == EntityType.IRON_GOLEM) {
             // 10%概率掉落
             if (random.nextInt(100) < 10) {
