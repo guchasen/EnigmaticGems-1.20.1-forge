@@ -35,23 +35,19 @@ public class EnigmaticGems
         //注册自定义创造模式物品栏
         ModCreativeTabs.register(modEventBus);
 
-        // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
 
-        // Register ourselves for server and other game events we are interested in
+
         MinecraftForge.EVENT_BUS.register(this);
 
-        // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
-        // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-        // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
 
         if (Config.logDirtBlock)
@@ -65,15 +61,13 @@ public class EnigmaticGems
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        // 移除了向原版INGREDIENTS标签页添加物品的代码，
-        //现在有自定义的创造模式物品栏
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
     {
-        // Do something when the server starts
+
         LOGGER.info("HELLO from server starting");
     }
 
@@ -84,7 +78,7 @@ public class EnigmaticGems
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-            // Some client setup code
+
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }

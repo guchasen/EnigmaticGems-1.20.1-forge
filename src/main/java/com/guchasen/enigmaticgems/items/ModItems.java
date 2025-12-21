@@ -22,4 +22,10 @@ public class ModItems {
             () -> new AntiPoisonGemItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
     public static final RegistryObject<Item> ECHO_GEM = ITEMS.register("echo_gem",
             () -> new EchoGemItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> GEM_OF_CONCEALMENT = ITEMS.register("gem_of_concealment",
+            () -> new GemOfConcealmentItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> WATER_BREATHING_GEM = ITEMS.register("water_breathing_gem",
+            () -> new WaterBreathingGemItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> EYE_OF_PHANTOM = ITEMS.register("eye_of_phantom",
+            () -> new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON)));
 }

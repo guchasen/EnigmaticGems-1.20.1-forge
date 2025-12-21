@@ -4,7 +4,10 @@
   "item.enigmatic_gems.fire_gem": "抗火奇石",
   "item.enigmatic_gems.anti_poison_gem": "抗毒奇石",
   "item.enigmatic_gems.echo_gem": "回响宝石",
+  "item.enigmatic_gems.gem_of_concealment": "隐匿宝石",
   "itemGroup.enigmatic_gems": "神秘宝石",
+  "item.enigmatic_gems.eye_of_phantom": "幻翼的眼珠子",
+  "item.enigmatic_gems.water_breathing_gem": "神水宝石",
   "item.enigmatic_gems.stalwart_gem.desc1": "击杀铁傀儡10%概率掉落",
   "item.enigmatic_gems.stalwart_gem.desc2": "当坚守宝石在快捷栏时为玩家提供1级抗性提升效果",
   "item.enigmatic_gems.red_gem.desc1": "女巫死亡时概率掉落(5%)",
@@ -13,6 +16,10 @@
   "item.enigmatic_gems.fire_gem.desc2": "在快捷栏提供抗火效果",
   "item.enigmatic_gems.anti_poison_gem.desc1": "洞穴蜘蛛死亡时10%概率掉落",
   "item.enigmatic_gems.anti_poison_gem.desc2": "在快捷栏时为玩家提供中毒免疫效果",
-  "item.enigmatic_gems.echo_gem.desc1": "8个回响碎片合成 加上一个坚守宝石合成",
-  "item.enigmatic_gems.echo_gem.desc2": "在快捷栏时玩家免疫黑暗效果，并且为玩家提供抗性提升2"
+  "item.enigmatic_gems.echo_gem.desc1": "8个回响碎片加上一个坚守宝石合成",
+  "item.enigmatic_gems.echo_gem.desc2": "在快捷栏时玩家免疫黑暗效果，并且为玩家提供抗性提升2",
+  "item.enigmatic_gems.gem_of_concealment.desc1": "击杀流浪商人概率掉落(5%)",
+  "item.enigmatic_gems.gem_of_concealment.desc2": "在快捷栏时提供隐身效果",
+  "item.enigmatic_gems.water_breathing_gem.desc1": "在快捷栏时提供水下呼吸效果",
+  "item.enigmatic_gems.water_breathing_gem.desc2": "击杀远古守卫者概率掉落（5%）"
 }

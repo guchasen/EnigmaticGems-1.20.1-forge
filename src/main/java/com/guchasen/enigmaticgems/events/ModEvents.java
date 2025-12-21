@@ -25,7 +25,6 @@ public class ModEvents {
     public static void onEntityDeath(LivingDeathEvent event) {
         if (event.getEntity().getType() == EntityType.IRON_GOLEM) {
             if (random.nextInt(100) < 10) {
-                // 在铁傀儡位置生成坚守宝石
                 event.getEntity().spawnAtLocation(ModItems.STALWART_GEM.get());
             }
         }
@@ -42,6 +41,21 @@ public class ModEvents {
         else if(event.getEntity().getType() == EntityType.CAVE_SPIDER){
             if (random.nextInt(100) < 10) {
                 event.getEntity().spawnAtLocation(ModItems.ANTI_POISON_GEM.get());
+            }
+        }
+        else if(event.getEntity().getType() == EntityType.PHANTOM){
+            if (random.nextInt(100) < 15) {
+                event.getEntity().spawnAtLocation(ModItems.EYE_OF_PHANTOM.get());
+            }
+        }
+        else if(event.getEntity().getType() == EntityType.WANDERING_TRADER){
+            if (random.nextInt(100) < 5) {
+                event.getEntity().spawnAtLocation(ModItems.GEM_OF_CONCEALMENT.get());
+            }
+        }
+        else if(event.getEntity().getType() == EntityType.ELDER_GUARDIAN){
+            if (random.nextInt(100) < 15) {
+                event.getEntity().spawnAtLocation(ModItems.WATER_BREATHING_GEM.get());
             }
         }
     }
@@ -81,19 +95,26 @@ public class ModEvents {
                         player.removeEffect(MobEffects.DARKNESS);
                     }
                 }
+                else if(stack.getItem() == ModItems.GEM_OF_CONCEALMENT.get()){
+                    if (!player.hasEffect(MobEffects.INVISIBILITY) || player.getEffect(MobEffects.INVISIBILITY).getDuration() <= 10) {
+                        player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 100, 0, false, false, true));
+                    }
+                }
+                else if(stack.getItem() == ModItems.WATER_BREATHING_GEM.get()){
+                    if (!player.hasEffect(MobEffects.WATER_BREATHING) || player.getEffect(MobEffects.WATER_BREATHING).getDuration() <= 10) {
+                        player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 100, 0, false, false, true));
+                    }
+                }
             }
         }
     }
 
     @SubscribeEvent
     public static void onMobEffectApplicable(MobEffectEvent.Applicable event) {
-        // 检查是否是玩家且获得的是中毒效果
         if (event.getEntity() instanceof Player player && event.getEffectInstance().getEffect() == MobEffects.POISON) {
-            // 检查玩家的快捷栏是否有抗毒奇石
             for (int i = 0; i < 9; i++) {
                 ItemStack stack = player.getInventory().getItem(i);
                 if (stack.getItem() == ModItems.ANTI_POISON_GEM.get()) {
-                    // 取消中毒效果
                     event.setResult(Event.Result.DENY);
                     return;
                 }
