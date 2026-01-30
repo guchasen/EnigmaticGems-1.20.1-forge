@@ -24,6 +24,7 @@ public class ModCreativeTabs {
                 output.accept(ModItems.EYE_OF_PHANTOM.get());
                 output.accept(ModItems.GEM_OF_CONCEALMENT.get());
                 output.accept(ModItems.WATER_BREATHING_GEM.get());
+                output.accept(ModItems.NIGHT_VISION_GEM.get());
             })
             .build());
 

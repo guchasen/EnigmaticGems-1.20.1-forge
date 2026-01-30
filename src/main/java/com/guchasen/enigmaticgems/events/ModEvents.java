@@ -67,19 +67,19 @@ public class ModEvents {
             for (int i = 0; i < 9; i++) {
                 ItemStack stack = player.getInventory().getItem(i);
                 if (stack.getItem() == ModItems.STALWART_GEM.get()) {
-                    if (!player.hasEffect(MobEffects.DAMAGE_RESISTANCE) || player.getEffect(MobEffects.DAMAGE_RESISTANCE).getDuration() <= 10) {
-                        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 0, false, false, true));
+                    if (!player.hasEffect(MobEffects.DAMAGE_RESISTANCE) || player.getEffect(MobEffects.DAMAGE_RESISTANCE).getDuration() <= 400) {
+                        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 4000000, 0, false, false, true));
                     }
                 }
                 else if(stack.getItem() == ModItems.RED_GEM.get()){
-                    if (!player.hasEffect(MobEffects.REGENERATION) || player.getEffect(MobEffects.REGENERATION).getDuration() <= 20) {
-                        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 201, 1, false, false, true));
+                    if (!player.hasEffect(MobEffects.REGENERATION) || player.getEffect(MobEffects.REGENERATION).getDuration() <= 400) {
+                        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 4000000, 1, false, false, true));
                     }
 
                 }
                 else if(stack.getItem() == ModItems.FIRE_GEM.get()){
-                    if (!player.hasEffect(MobEffects.FIRE_RESISTANCE) || player.getEffect(MobEffects.FIRE_RESISTANCE).getDuration() <= 10) {
-                        player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 100, 0, false, false, true));
+                    if (!player.hasEffect(MobEffects.FIRE_RESISTANCE) || player.getEffect(MobEffects.FIRE_RESISTANCE).getDuration() <= 400) {
+                        player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 4000000, 0, false, false, true));
                     }
                 }
                 else if(stack.getItem() == ModItems.ANTI_POISON_GEM.get()){
@@ -88,21 +88,26 @@ public class ModEvents {
                     }
                 }
                 else if(stack.getItem() == ModItems.ECHO_GEM.get()){
-                    if (!player.hasEffect(MobEffects.DAMAGE_RESISTANCE) || player.getEffect(MobEffects.DAMAGE_RESISTANCE).getDuration() <= 10) {
-                        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 1, false, false, true));
+                    if (!player.hasEffect(MobEffects.DAMAGE_RESISTANCE) || player.getEffect(MobEffects.DAMAGE_RESISTANCE).getDuration() <= 400) {
+                        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 4000000, 1, false, false, true));
                     }
                     if(player.hasEffect(MobEffects.DARKNESS)){
                         player.removeEffect(MobEffects.DARKNESS);
                     }
                 }
                 else if(stack.getItem() == ModItems.GEM_OF_CONCEALMENT.get()){
-                    if (!player.hasEffect(MobEffects.INVISIBILITY) || player.getEffect(MobEffects.INVISIBILITY).getDuration() <= 10) {
-                        player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 100, 0, false, false, true));
+                    if (!player.hasEffect(MobEffects.INVISIBILITY) || player.getEffect(MobEffects.INVISIBILITY).getDuration() <= 400) {
+                        player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 4000000, 0, false, false, true));
                     }
                 }
                 else if(stack.getItem() == ModItems.WATER_BREATHING_GEM.get()){
-                    if (!player.hasEffect(MobEffects.WATER_BREATHING) || player.getEffect(MobEffects.WATER_BREATHING).getDuration() <= 10) {
-                        player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 100, 0, false, false, true));
+                    if (!player.hasEffect(MobEffects.WATER_BREATHING) || player.getEffect(MobEffects.WATER_BREATHING).getDuration() <= 400) {
+                        player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 4000000, 0, false, false, true));
+                    }
+                }
+                else if(stack.getItem() == ModItems.NIGHT_VISION_GEM.get()){
+                    if (!player.hasEffect(MobEffects.NIGHT_VISION) || player.getEffect(MobEffects.NIGHT_VISION).getDuration() <= 400) {
+                        player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 4000000, 0, false, false, true));
                     }
                 }
             }

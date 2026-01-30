@@ -7,6 +7,7 @@
   "item.enigmatic_gems.gem_of_concealment": "Gem Of Concealment",
   "itemGroup.enigmatic_gems": "Enigmatic Gems",
   "item.enigmatic_gems.eye_of_phantom": "Eye Of Phantom",
+  "item.enigmatic_gems.night_vision_gem": "Night Vision Gem",
   "item.enigmatic_gems.water_breathing_gem": "Water Breathing Gem",
   "item.enigmatic_gems.stalwart_gem.desc1": "10% chance to drop when killing an Iron Golem",
   "item.enigmatic_gems.stalwart_gem.desc2": "Provides Resistance I when in hotbar",
@@ -21,5 +22,7 @@
   "item.enigmatic_gems.gem_of_concealment.desc1": "kill the Wandering Trader to get this gem(5%)",
   "item.enigmatic_gems.gem_of_concealment.desc2": "provides INVISIBILITY when in hotbar",
   "item.enigmatic_gems.water_breathing_gem.desc1": "enable player to breathe under water",
-  "item.enigmatic_gems.water_breathing_gem.desc2": "kill Elder Guardian to get this gem"
+  "item.enigmatic_gems.water_breathing_gem.desc2": "kill Elder Guardian to get this gem",
+  "item.enigmatic_gems.night_vision_gem.desc1": "provide NIGHT VISION when in hotbar",
+  "item.enigmatic_gems.night_vision_gem.desc2": "use Eye Of Phantom to craft this gem in the stonecutter"
 }

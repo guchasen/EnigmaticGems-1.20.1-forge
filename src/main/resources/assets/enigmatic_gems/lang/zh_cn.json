@@ -7,7 +7,8 @@
   "item.enigmatic_gems.gem_of_concealment": "隐匿宝石",
   "itemGroup.enigmatic_gems": "神秘宝石",
   "item.enigmatic_gems.eye_of_phantom": "幻翼的眼珠子",
-  "item.enigmatic_gems.water_breathing_gem": "神水宝石",
+  "item.enigmatic_gems.night_vision_gem": "夜视宝石",
+  "item.enigmatic_gems.water_breathing_gem": "水肺宝石",
   "item.enigmatic_gems.stalwart_gem.desc1": "击杀铁傀儡10%概率掉落",
   "item.enigmatic_gems.stalwart_gem.desc2": "当坚守宝石在快捷栏时为玩家提供1级抗性提升效果",
   "item.enigmatic_gems.red_gem.desc1": "女巫死亡时概率掉落(5%)",
@@ -21,5 +22,7 @@
   "item.enigmatic_gems.gem_of_concealment.desc1": "击杀流浪商人概率掉落(5%)",
   "item.enigmatic_gems.gem_of_concealment.desc2": "在快捷栏时提供隐身效果",
   "item.enigmatic_gems.water_breathing_gem.desc1": "在快捷栏时提供水下呼吸效果",
-  "item.enigmatic_gems.water_breathing_gem.desc2": "击杀远古守卫者概率掉落（5%）"
+  "item.enigmatic_gems.water_breathing_gem.desc2": "击杀远古守卫者概率掉落（5%）",
+  "item.enigmatic_gems.night_vision_gem.desc1": "在快捷栏时提供夜视",
+  "item.enigmatic_gems.night_vision_gem.desc2": "用幻翼的眼珠子在切石机中切出夜视宝石"
 }

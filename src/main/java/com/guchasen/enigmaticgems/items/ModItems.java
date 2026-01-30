@@ -26,6 +26,8 @@ public class ModItems {
             () -> new GemOfConcealmentItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
     public static final RegistryObject<Item> WATER_BREATHING_GEM = ITEMS.register("water_breathing_gem",
             () -> new WaterBreathingGemItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> NIGHT_VISION_GEM = ITEMS.register("night_vision_gem",
+            () -> new NightVisionGemItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
     public static final RegistryObject<Item> EYE_OF_PHANTOM = ITEMS.register("eye_of_phantom",
             () -> new Item(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON)));
 }

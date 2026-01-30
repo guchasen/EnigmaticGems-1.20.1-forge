@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "enigmatic_gems:eye_of_phantom"
+  },
+  "result": "enigmatic_gems:night_vision_gem",
+  "count": 1
+}
