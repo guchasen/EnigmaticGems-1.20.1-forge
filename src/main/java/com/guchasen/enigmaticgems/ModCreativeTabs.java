@@ -19,12 +19,15 @@ public class ModCreativeTabs {
                 output.accept(ModItems.STALWART_GEM.get());
                 output.accept(ModItems.RED_GEM.get());
                 output.accept(ModItems.FIRE_GEM.get());
-                output.accept(ModItems.ANTI_POISON_GEM.get());
+                output.accept(ModItems.BIG_RED_GEM.get());
                 output.accept(ModItems.ECHO_GEM.get());
                 output.accept(ModItems.EYE_OF_PHANTOM.get());
                 output.accept(ModItems.GEM_OF_CONCEALMENT.get());
+                output.accept(ModItems.ANTI_POISON_GEM.get());
                 output.accept(ModItems.WATER_BREATHING_GEM.get());
                 output.accept(ModItems.NIGHT_VISION_GEM.get());
+                output.accept(ModItems.BLACK_GEM.get());
+
             })
             .build());
 

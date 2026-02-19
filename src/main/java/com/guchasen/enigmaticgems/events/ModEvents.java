@@ -2,17 +2,16 @@ package com.guchasen.enigmaticgems.events;
 
 import com.guchasen.enigmaticgems.EnigmaticGems;
 import com.guchasen.enigmaticgems.items.ModItems;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import org.apache.commons.lang3.ObjectUtils;
 
 import java.util.Random;
 
@@ -34,7 +33,7 @@ public class ModEvents {
             }
         }
         else if(event.getEntity().getType() == EntityType.WITCH){
-            if (random.nextInt(100) < 5) {
+            if (random.nextInt(100) < 10) {
                 event.getEntity().spawnAtLocation(ModItems.RED_GEM.get());
             }
         }
@@ -58,77 +57,25 @@ public class ModEvents {
                 event.getEntity().spawnAtLocation(ModItems.WATER_BREATHING_GEM.get());
             }
         }
-    }
-    @SubscribeEvent
-    public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-        if (event.phase == TickEvent.Phase.END && !event.player.level().isClientSide()) {
-            Player player = event.player;
-
-            for (int i = 0; i < 9; i++) {
-                ItemStack stack = player.getInventory().getItem(i);
-                if (stack.getItem() == ModItems.STALWART_GEM.get()) {
-                    if (!player.hasEffect(MobEffects.DAMAGE_RESISTANCE) || player.getEffect(MobEffects.DAMAGE_RESISTANCE).getDuration() <= 400) {
-                        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 4000000, 0, false, false, true));
-                    }
-                }
-                else if(stack.getItem() == ModItems.RED_GEM.get()){
-                    if (!player.hasEffect(MobEffects.REGENERATION) || player.getEffect(MobEffects.REGENERATION).getDuration() <= 400) {
-                        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 4000000, 1, false, false, true));
-                    }
-
-                }
-                else if(stack.getItem() == ModItems.FIRE_GEM.get()){
-                    if (!player.hasEffect(MobEffects.FIRE_RESISTANCE) || player.getEffect(MobEffects.FIRE_RESISTANCE).getDuration() <= 400) {
-                        player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 4000000, 0, false, false, true));
-                    }
-                }
-                else if(stack.getItem() == ModItems.ANTI_POISON_GEM.get()){
-                    if (player.hasEffect(MobEffects.POISON)) {
-                        player.removeEffect(MobEffects.POISON);
-                    }
-                }
-                else if(stack.getItem() == ModItems.ECHO_GEM.get()){
-                    if (!player.hasEffect(MobEffects.DAMAGE_RESISTANCE) || player.getEffect(MobEffects.DAMAGE_RESISTANCE).getDuration() <= 400) {
-                        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 4000000, 1, false, false, true));
-                    }
-                    if(player.hasEffect(MobEffects.DARKNESS)){
-                        player.removeEffect(MobEffects.DARKNESS);
-                    }
-                }
-                else if(stack.getItem() == ModItems.GEM_OF_CONCEALMENT.get()){
-                    if (!player.hasEffect(MobEffects.INVISIBILITY) || player.getEffect(MobEffects.INVISIBILITY).getDuration() <= 400) {
-                        player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 4000000, 0, false, false, true));
-                    }
-                }
-                else if(stack.getItem() == ModItems.WATER_BREATHING_GEM.get()){
-                    if (!player.hasEffect(MobEffects.WATER_BREATHING) || player.getEffect(MobEffects.WATER_BREATHING).getDuration() <= 400) {
-                        player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 4000000, 0, false, false, true));
-                    }
-                }
-                else if(stack.getItem() == ModItems.NIGHT_VISION_GEM.get()){
-                    if (!player.hasEffect(MobEffects.NIGHT_VISION) || player.getEffect(MobEffects.NIGHT_VISION).getDuration() <= 400) {
-                        player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 4000000, 0, false, false, true));
-                    }
-                }
+        else if(event.getEntity().getType() == EntityType.WITHER_SKELETON){
+            if (random.nextInt(100) < 5) {
+                event.getEntity().spawnAtLocation(ModItems.BLACK_GEM.get());
             }
         }
     }
 
     @SubscribeEvent
     public static void onMobEffectApplicable(MobEffectEvent.Applicable event) {
-        if (event.getEntity() instanceof Player player && event.getEffectInstance().getEffect() == MobEffects.POISON) {
-            for (int i = 0; i < 9; i++) {
-                ItemStack stack = player.getInventory().getItem(i);
-                if (stack.getItem() == ModItems.ANTI_POISON_GEM.get()) {
-                    event.setResult(Event.Result.DENY);
-                    return;
-                }
-            }
-        }
-        else if(event.getEntity() instanceof Player player&& event.getEffectInstance().getEffect() == MobEffects.DARKNESS){
+        if(event.getEntity() instanceof Player player){
             for(int i = 0; i < 9; i++){
                 ItemStack stack = player.getInventory().getItem(i);
-                if(stack.getItem() == ModItems.ECHO_GEM.get()){
+                if(stack.getItem() == ModItems.ECHO_GEM.get() && event.getEffectInstance().getEffect() == MobEffects.DARKNESS){
+                    event.setResult(Event.Result.DENY);
+                    return;
+                } else if (stack.getItem() == ModItems.ANTI_POISON_GEM.get() && event.getEffectInstance().getEffect() == MobEffects.POISON) {
+                    event.setResult(Event.Result.DENY);
+                    return;
+                }else if(stack.getItem() == ModItems.BLACK_GEM.get() && event.getEffectInstance().getEffect() == MobEffects.WITHER){
                     event.setResult(Event.Result.DENY);
                     return;
                 }
