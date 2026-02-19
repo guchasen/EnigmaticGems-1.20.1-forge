@@ -20,6 +20,7 @@ authors="${mod_authors}" #optional
 
 
 description='''${mod_description}'''
+logoFile="Enigmatic Gems.png"
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.${mod_id}]] #optional
     # the modid of the dependency
